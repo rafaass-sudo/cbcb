@@ -41,7 +41,7 @@
 
                 <button type="submit" id="btn-kirim"
                         class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-4 rounded-lg shadow-lg transform active:scale-95 transition-all">
-                    TEMBAK SEKARANG
+                    START
                 </button>
 
             </form>
@@ -54,7 +54,7 @@
         // INI ADALAH BAGIAN API KEY
         // Ganti ID di bawah dengan ID yang kamu dapat dari Dashboard EmailJS
         (function() {
-            emailjs.init("service_dexnzhe"); // <--- MASUKKAN PUBLIC KEY KAMU DISINI
+            emailjs.init("A5VCqiv7TWchHQ65q"); // <--- MASUKKAN PUBLIC KEY KAMU DISINI
         })();
 
         const btn = document.getElementById('btn-kirim');
@@ -62,10 +62,10 @@
         document.getElementById('jasteb-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            btn.innerText = 'PROSES TEMBAK...';
+            btn.innerText = 'PROSES BREEE...';
             btn.disabled = true;
 
-            const serviceID = 'default_service';
+            const serviceID = 'service_dexnzhe';
             const templateID = 'template_2vdb35a'; // <--- MASUKKAN TEMPLATE ID DISINI
 
             emailjs.sendForm(serviceID, templateID, this)
@@ -74,7 +74,7 @@
                     btn.classList.add('bg-green-600');
                     alert('Target Berhasil Di-Jasteb!');
                     setTimeout(() => {
-                        btn.innerText = 'TEMBAK LAGI';
+                        btn.innerText = 'START LAGI';
                         btn.disabled = false;
                         btn.classList.remove('bg-green-600');
                     }, 3000);
